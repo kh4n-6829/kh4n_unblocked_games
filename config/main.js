@@ -1,7 +1,7 @@
 // This changes the title of your site
 
 var sitename = "kh4n unblocked games"; // Change this to change the name of your website.
-var subtext = "made with luv"; // set the subtext
+var subtext = "V1.2 - added a new pass so authorized people could play on the website - new colours!"; // set the subtext
 
 // more settings in main.css
 
