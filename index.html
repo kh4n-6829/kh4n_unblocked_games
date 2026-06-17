@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>enter the pass buddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            color: white;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>enter passcode here</h1>
+
+    <input type="password" id="password" placeholder="Passcode">
+
+    <button onclick="checkPassword()">Unlock</button>
+
+    <p id="error"></p>
+</div>
+
+<script>
+function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "mewantgames") {
+        localStorage.setItem("authenticated", "true");
+        window.location.href = "home.html";
+    } else {
+        document.getElementById("error").textContent = "Incorrect passcode";
+    }
+}
+
+document.getElementById("password").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        checkPassword();
+    }
+});
+</script>
+
+</body>
+</html>
